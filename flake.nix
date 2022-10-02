@@ -1,19 +1,19 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = { nixpkgs, home-manager, ... }:
     let
       users = {
-        jdoe = {
+        user = {
           name = "Jane Doe";
           username = "jdoe";
           homeDirectory = "/home/jdoe";
-          email = "jdoe@example.com";
+          email = "jane.doe@example.com";
         };
         docker = {
           name = "Example User";
@@ -52,7 +52,7 @@
                 useUserPackages = true;
                 users.jdoe = import ./home;
                 extraSpecialArgs = {
-                  user = users.jdoe;
+                  user = users.user;
                 };
               };
             }
