@@ -29,9 +29,10 @@ nix-shell -p git
 git clone https://github.com/<GITHUB_USER>/nixconfig.git
 cd nixconfig
 cp /etc/nixos/*.nix systems/nixos
+nano flake.nix
 ```
 
-- Edit `flake.nix` and modify the `users.user` variable from "Jane Doe" to match the one you setup in `systems/nixos/configuration.nix`
+- Edit `flake.nix` and modify the `users.user` variable from "Jane Doe" to match the one you setup in `systems/nixos/configuration.nix`. Press ctrl+x to exit nano and select yes to save.
 
 ```
 nixos-rebuild boot --flake .#nixos
