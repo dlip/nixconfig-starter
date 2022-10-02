@@ -52,7 +52,7 @@
                 useUserPackages = true;
                 users.jdoe = import ./home;
                 extraSpecialArgs = {
-                  user = users.jdoe;
+                  user = users.user;
                 };
               };
             }

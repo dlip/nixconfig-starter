@@ -31,7 +31,7 @@ cd nixconfig
 cp /etc/nixos/*.nix systems/nixos
 ```
 
-- Edit `flake.nix` and modify the "Jane Doe" user to match the one you setup in `systems/nixos/configuration.nix`
+- Edit `flake.nix` and modify the `users.user` variable from "Jane Doe" to match the one you setup in `systems/nixos/configuration.nix`
 
 ```
 nixos-rebuild boot --flake .#nixos
