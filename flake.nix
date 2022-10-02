@@ -1,8 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -15,11 +15,11 @@
           homeDirectory = "/home/jdoe";
           email = "jane.doe@example.com";
         };
-        docker = {
-          name = "Example User";
-          username = "Linux";
+        root = {
+          name = "Root User";
+          username = "root";
           homeDirectory = "/root";
-          email = "user@example.com";
+          email = "root@example.com";
         };
       };
       pkgsForSystem = { system }: import nixpkgs {
@@ -35,7 +35,7 @@
             ./home
           ];
           extraSpecialArgs = {
-            user = users.docker;
+            user = users.root;
           };
         };
       };
@@ -52,7 +52,7 @@
                 useUserPackages = true;
                 users.jdoe = import ./home;
                 extraSpecialArgs = {
-                  user = users.user;
+                  user = users.jdoe;
                 };
               };
             }
