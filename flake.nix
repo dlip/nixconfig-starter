@@ -8,14 +8,27 @@
   };
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+      pkgsForSystem = { system }: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
       homeConfigurations.Linux = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = pkgsForSystem { system = "x86_64-linux"; };
         modules = [
           ./home
         ];
       };
+      nixosConfigurations =
+        {
+          nixos = nixpkgs.lib.nixosSystem rec {
+            system = "x86_64-linux";
+            pkgs = pkgsForSystem { system = "x86_64-linux"; };
+            modules = [
+              ./systems/nixos/configuration.nix
+            ];
+          };
+        };
     };
 }
