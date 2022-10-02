@@ -37,6 +37,6 @@ nano flake.nix
 - Press ctrl+x to exit nano and select yes to save.
 
 ```
-nixos-rebuild boot --flake .#nixos
+sudo nixos-rebuild boot --flake .#nixos
 sudo reboot
 ```
