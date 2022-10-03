@@ -10,6 +10,7 @@
     let
       users = {
         user = {
+          # CHANGE ME TO YOUR USER
           name = "Jane Doe";
           username = "jdoe";
           homeDirectory = "/home/jdoe";
@@ -50,6 +51,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                # CHANGE ME TO YOUR USERNAME
                 users.jdoe = import ./home;
                 extraSpecialArgs = {
                   user = users.user;

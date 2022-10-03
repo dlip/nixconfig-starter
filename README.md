@@ -32,8 +32,7 @@ cp /etc/nixos/*.nix systems/nixos
 nano flake.nix
 ```
 
-- Modify the `users.user` variable from "Jane Doe" to match the one you setup in `systems/nixos/configuration.nix`
-- Do the same for users.jdoe in the nixosConfigurations
+- Modify the `flake.nix` where it says "CHANGE ME" to the user you set up on installation
 - Press ctrl+x to exit nano and select yes to save.
 
 ```

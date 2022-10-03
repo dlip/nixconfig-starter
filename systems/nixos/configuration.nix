@@ -70,7 +70,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jdoe = {
     isNormalUser = true;
-    description = "user";
+    description = "Jane Doe";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
