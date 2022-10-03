@@ -67,6 +67,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.jdoe = {
+    isNormalUser = true;
+    description = "Jane Doeconfig";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
