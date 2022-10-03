@@ -52,7 +52,13 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 # CHANGE ME TO YOUR USERNAME
-                users.jdoe = import ./home;
+                users.jdoe = {
+                  imports = [
+                    ./home
+                    ./home/graphical.nix
+                  ];
+                };
+
                 extraSpecialArgs = {
                   user = users.user;
                 };
