@@ -45,6 +45,12 @@
           system = "x86_64-linux";
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
+            ({}: 
+              {users.users."${users.user.username}" = {
+                isNormalUser = true;
+                description = users.user.name;
+                extraGroups = [ "networkmanager" "wheel" ];
+              };})
             ./systems/nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {

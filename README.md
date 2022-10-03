@@ -6,18 +6,6 @@ A Nix/NixOS configuration using flakes to help you get started quickly
 
 - Fork this repo if you want to be able to save your customizations. For example, name it nixconfig.
 
-### Docker
-
-```
-docker-compose run --name mynix nix bash
-home-manager switch --flake .#docker
-```
-
-Note: be careful of running `docker system prune` while the container is stopped since it will delete it
-
-```
-docker start -i mynix
-```
 
 ### NixOS
 
@@ -38,4 +26,19 @@ nano flake.nix
 ```
 sudo nixos-rebuild boot --flake .#nixos
 sudo reboot
+```
+
+### Docker
+
+```
+docker-compose run --name mynix nix bash
+home-manager switch --flake .#docker
+```
+
+Note: be careful of running `docker system prune` while the container is stopped since it will delete it
+
+To restart the container after a reboot run:
+
+```
+docker start -i mynix
 ```
