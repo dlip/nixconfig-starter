@@ -9,18 +9,18 @@
   outputs = { nixpkgs, home-manager, ... }:
     let
       users = {
-        user = {
+        me = {
           # CHANGE ME TO YOUR USER
           name = "Jane Doe";
           username = "jdoe";
           homeDirectory = "/home/jdoe";
           email = "jane.doe@example.com";
         };
-        root = {
-          name = "Root User";
+        docker = {
+          name = "Docker User";
           username = "root";
           homeDirectory = "/root";
-          email = "root@example.com";
+          email = "docker@example.com";
         };
       };
       pkgsForSystem = { system }: import nixpkgs {
@@ -36,7 +36,7 @@
             ./home
           ];
           extraSpecialArgs = {
-            user = users.root;
+            user = users.docker;
           };
         };
       };
@@ -51,7 +51,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                # CHANGE ME TO YOUR USERNAME
+                # CHANGE 'jdoe' TO YOUR USERNAME
                 users.jdoe = {
                   imports = [
                     ./home
@@ -60,7 +60,7 @@
                 };
 
                 extraSpecialArgs = {
-                  user = users.user;
+                  user = users.me;
                 };
               };
             }
