@@ -5,6 +5,7 @@
     ./bash.nix
     ./zsh.nix
     ./nvim.nix
+    ./starship.nix
   ];
 
   home.username = user.username;
