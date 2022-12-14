@@ -17,10 +17,19 @@ nix-shell -p git
 git clone https://github.com/<GITHUB_USER>/nixconfig.git
 cd nixconfig
 cp /etc/nixos/*.nix systems/nixos
-nano flake.nix
 ```
 
+```
+nano flake.nix
+```
 - Modify the `flake.nix` where it says "CHANGE ME" to the user you set up on installation
+- Press ctrl+x to exit nano and select yes to save.
+
+```
+nano systems/nixos/configuration.nix
+```
+- Allow docker access: Under you user `extraGroups` add "docker" inside the brackets `[ ]`
+- Use ZSH shell by default: On the line under extraGroups add `shell = "/etc/profiles/per-user/USERNAME/bin/zsh";` (replace USERNAME with your username)
 - Press ctrl+x to exit nano and select yes to save.
 
 ```
