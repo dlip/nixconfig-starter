@@ -4,6 +4,8 @@
     ./fonts.nix
   ];
   home.packages = with pkgs; [
-    firefox
+    dbeaver
+    google-chrome
+    lens
   ];
 }
