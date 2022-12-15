@@ -61,3 +61,29 @@ To restart the container after a reboot run:
 ```
 docker start -i mynix
 ```
+
+## Adding software
+
+- You can search for software from this site: https://search.nixos.org/. The name of the package is the red text next to `Name` in the results
+- Add the package to `home.packages` in `home/default.nix` or `home/graphical.nix` if it is GUI software
+- Then run:
+
+```
+sudo nixos-rebuild switch --flake .#
+```
+
+## Upgrading
+
+- Updates are manual, so set a calander event every Friday etc. to update your system
+- All software, including the OS is locked to the nixpkgs git version in `flake.lock`, to update this run:
+
+```
+nix flake update
+```
+
+- Then run this to apply and reboot
+
+```
+sudo nixos-rebuild boot --flake .#
+sudo reboot
+```
