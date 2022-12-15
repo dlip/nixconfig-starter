@@ -2,6 +2,7 @@
 {
   imports = [
     ./fonts.nix
+    ./vscode.nix
   ];
   home.packages = with pkgs; [
     dbeaver
