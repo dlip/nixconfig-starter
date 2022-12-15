@@ -87,3 +87,9 @@ nix flake update
 sudo nixos-rebuild boot --flake .#
 sudo reboot
 ```
+
+- Once you are confident everything is working, you can remove old generations with
+
+```
+sudo nix-collect-garbage -d
+```
