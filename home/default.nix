@@ -18,5 +18,6 @@
     wget
     unzip
     zip
+    docker-compose
   ];
 }
