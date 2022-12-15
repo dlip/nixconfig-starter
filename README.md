@@ -30,6 +30,16 @@ nano systems/nixos/configuration.nix
 ```
 - Allow docker access: Under you user `extraGroups` add "docker" inside the brackets `[ ]`
 - Use ZSH shell by default: On the line under extraGroups add `shell = "/etc/profiles/per-user/USERNAME/bin/zsh";` (replace USERNAME with your username)
+- You can remove user specific packages since we are managing them using home-manager, delete the following lines:
+
+```
+    packages = with pkgs; [
+      firefox
+      kate
+    #  thunderbird
+    ];
+```
+
 - Press ctrl+x to exit nano and select yes to save.
 
 ```
