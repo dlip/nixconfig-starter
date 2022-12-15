@@ -8,5 +8,7 @@
     dbeaver
     google-chrome
     lens
+    slack
+    teams
   ];
 }
