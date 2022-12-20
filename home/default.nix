@@ -15,9 +15,11 @@
   programs.direnv.enable = true;
 
   home.packages = with pkgs; [
-    wget
-    unzip
-    zip
+    awscli2
     docker-compose
+    pciutils
+    unzip
+    wget
+    zip
   ];
 }

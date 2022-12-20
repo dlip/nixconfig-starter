@@ -33,7 +33,7 @@
         docker = home-manager.lib.homeManagerConfiguration {
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
-            ./home
+            ./home/default.nix
           ];
           extraSpecialArgs = {
             user = users.docker;
@@ -55,7 +55,7 @@
                 # CHANGE 'jdoe' TO YOUR USERNAME
                 users.jdoe = {
                   imports = [
-                    ./home
+                    ./home/default.nix
                     ./home/graphical.nix
                   ];
                 };
