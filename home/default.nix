@@ -1,6 +1,8 @@
 { config, pkgs, user, ... }:
 {
   imports = [
+    ./packages.nix
+    ./direnv.nix
     ./git.nix
     ./bash.nix
     ./zsh.nix
@@ -12,14 +14,4 @@
   home.homeDirectory = user.homeDirectory;
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
-  programs.direnv.enable = true;
-
-  home.packages = with pkgs; [
-    awscli2
-    docker-compose
-    pciutils
-    unzip
-    wget
-    zip
-  ];
 }

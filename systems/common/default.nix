@@ -11,4 +11,8 @@
 
   virtualisation.docker.enable = true;
   networking.firewall.enable = true;
+
+  # Antivirus
+  services.clamav.daemon.enable = true;
+  services.clamav.updater.enable = true;
 }
