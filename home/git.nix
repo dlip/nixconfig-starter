@@ -1,12 +1,12 @@
-{ user, ... }: {
+{config, ...}: {
   programs.git = {
     enable = true;
-    userEmail = user.email;
-    userName = user.name;
+    userEmail = config.home.email;
+    userName = config.home.name;
     extraConfig = {
       init.defaultBranch = "main";
-      credential = { helper = "store"; };
-      push = { default = "current"; };
+      credential = {helper = "store";};
+      push = {default = "current";};
       pull = {
         rebase = false;
         default = "current";

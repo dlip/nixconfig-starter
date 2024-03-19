@@ -1,5 +1,15 @@
-{ config, pkgs, user, ... }:
-{
+{lib, ...}:
+with lib; {
+  options.home = {
+    name = mkOption {
+      type = types.str;
+      default = "Example User";
+    };
+    email = mkOption {
+      type = types.str;
+      default = "user@example.com";
+    };
+  };
   imports = [
     ./packages.nix
     ./direnv.nix
@@ -9,9 +19,4 @@
     ./nvim.nix
     ./starship.nix
   ];
-
-  home.username = user.username;
-  home.homeDirectory = user.homeDirectory;
-  home.stateVersion = "22.11";
-  programs.home-manager.enable = true;
 }
