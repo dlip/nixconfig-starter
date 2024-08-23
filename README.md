@@ -51,7 +51,7 @@ sudo reboot
 
 ```
 docker-compose run --name mynix nix bash
-home-manager switch --flake .#docker
+nix run home-manager/release-24.05 -- switch --flake .#docker
 ```
 
 Note: be careful of running `docker system prune` while the container is stopped since it will delete it
