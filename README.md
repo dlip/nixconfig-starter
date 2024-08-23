@@ -50,7 +50,7 @@ sudo reboot
 ### Docker
 
 ```
-docker-compose run --name mynix nix bash
+docker-compose run --name mynix nix sh
 nix run home-manager/release-24.05 -- switch --flake .#docker
 ```
 
